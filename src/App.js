@@ -1,8 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./Component/Navbar";
 
 function App() {
   return (
+<<<<<<< HEAD
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -26,6 +28,10 @@ function App() {
 >>>>>>> 3ea52f3 (Initialize project using Create React App)
         </a>
       </header>
+=======
+    <div>
+      <Navbar />
+>>>>>>> a4a69b1 (Navbar Updated)
     </div>
   );
 }
