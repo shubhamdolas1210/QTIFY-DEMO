@@ -6,7 +6,6 @@
   row-gap: 5px;
   background-color: var(--css-black);
   margin-top: 10px;
-  margin-left: 32px;
 }
 .card {
   flex: 1;

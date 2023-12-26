@@ -8,9 +8,11 @@
 }
 .hs-content {
   display: flex;
-  justify-content: center;
   align-items: center;
   color: var(--css-white);
+}
+.hs-content h1 {
+  text-align: center;
 }
 .hs-img-frame {
   height: 212px;
