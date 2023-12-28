@@ -3,12 +3,25 @@
 .title {
   font-size: 20px;
   color: var(--css-white);
-  margin-left: 16px;
-  margin-top: 20px;
+  margin-left: 18px;
+  margin-top: 10px;
 }
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 16px;
-  gap: 32px;
+  column-gap: 32px;
+  row-gap: 6px;
+  margin-left: 18px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.section-toggler-btn {
+  color: var(--css-primary);
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 18px;
 }

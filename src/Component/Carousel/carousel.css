@@ -1,0 +1,29 @@
+.swiperSlide {
+  color: var(--css-white);
+  font-size: 14px;
+}
+.carousel-container {
+  position: relative;
+  margin-left: 18px;
+  margin-right: 18px;
+}
+.arrow {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  top: 40%;
+  z-index: 1;
+  transform: translateY(-10%);
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.arrow img {
+  width: 100%;
+  height: 100%;
+}
+.arrow-left {
+  left: 2px;
+}
+.arrow-right {
+  right: -22px;
+}
