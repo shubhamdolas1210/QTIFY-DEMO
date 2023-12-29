@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import Card from "../Card/index.js";
 import "./carousel.css";
 
-export default ({ data }) => {
+export default ({ navId, data }) => {
   return (
     <div className="carousel-container">
       <Swiper
@@ -18,7 +18,10 @@ export default ({ data }) => {
         // pagination={{
         //   type: "fraction",
         // }}
-        navigation={{ nextEl: ".arrow-left", prevEl: ".arrow-right" }}
+        navigation={{
+          nextEl: `.arrow-right-${navId}`,
+          prevEl: `.arrow-left-${navId}`,
+        }}
         virtual
       >
         {data.map((cardData) => (
@@ -31,11 +34,10 @@ export default ({ data }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="arrow-left arrow">
-        {" "}
+      <div className={`arrow-left-${navId} arrow-left arrow`}>
         <img src="Group 3741.png" />
       </div>
-      <div className="arrow-right arrow">
+      <div className={`arrow-right-${navId} arrow-right arrow`}>
         <img src="Group 3740.png" />
       </div>
     </div>
