@@ -1,7 +1,17 @@
 import Menu from "../../Menu";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { ReactComponent as SearchIcon } from "./Search icon.svg";
 
+const ENDPOINT = "https://qtify-backend-labs.crio.do/";
+
 export default () => {
+  const [TopAlbum, setTopAlbum] = useState([]);
+  useEffect(() => {
+    axios.get(`${ENDPOINT}albums/top`).then(({ data }) => {
+      setTopAlbum(data);
+    });
+  }, []);
   return (
     <div
       style={{
@@ -36,7 +46,7 @@ export default () => {
           <SearchIcon />
         </button>
       </form>
-      <Menu data={[1, 2, 3, 4, 5]} />
+      <Menu data={TopAlbum} />
     </div>
   );
 };

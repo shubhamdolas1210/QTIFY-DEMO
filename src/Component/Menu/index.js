@@ -1,51 +1,55 @@
-function MenuItem() {
+function MenuItem({ imgSrc, followerCount, label, artistName }) {
   return (
     <div
       style={{
         display: "flex",
-        height: "120px",
+        height: "100px",
         width: "100%",
-        border: "2px solid blue",
+        padding: "10px",
       }}
     >
       <div
         style={{
-          width: "120px",
-          height: "120px",
-          border: "2px solid yellow",
+          width: "80px",
+          height: "80px",
+          overflow: "hidden",
+          objectfit: "cover",
+          borderRadius: "10px",
         }}
-      ></div>
+      >
+        <img src={imgSrc} alt="img not showing" />
+      </div>
       <div
         style={{
           flex: 1,
-          border: "2px solid orange",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           color: "#fff",
+          padding: "8px",
         }}
       >
-        <p>Album text</p>
+        <p>{label}</p>
         <p
           style={{
-            fontSize: "8px",
+            fontSize: "10px",
           }}
         >
-          Album lettterr aplha bet
+          <p>{artistName}</p>
         </p>
       </div>
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "flex-end",
           alignItems: "center",
           width: "200px",
           height: "100%",
-          border: "2px solid yellow",
           color: "#fff",
+          padding: "8px",
         }}
       >
-        100 followers
+        {followerCount} follows
       </div>
     </div>
   );
@@ -58,14 +62,22 @@ export default ({ data }) => {
         position: "absolute",
         width: "570px",
         maxHeight: "500px",
-        border: "5px solid red",
         overflowY: "auto",
         top: "60px",
         backgroundColor: "black",
+        borderRadius: "2px 8px 8px 8px",
       }}
     >
-      {data.map((n) => (
-        <MenuItem />
+      {data.map((cardData) => (
+        <MenuItem
+          imgSrc={cardData.image}
+          label={cardData.title}
+          followerCount={cardData.follows}
+          artistName={cardData.songs
+            .reduce((allArtists, song) => [...allArtists, ...song.artists], [])
+            .slice(0, 2)
+            .join(", ")}
+        />
       ))}
       ;
     </div>
