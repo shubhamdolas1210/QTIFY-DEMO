@@ -7,25 +7,34 @@ const ENDPOINT = "https://qtify-backend-labs.crio.do/";
 
 export default () => {
   const [TopAlbum, setTopAlbum] = useState([]);
+  const [input, setInput] = useState("");
+
   useEffect(() => {
     axios.get(`${ENDPOINT}albums/top`).then(({ data }) => {
       setTopAlbum(data);
     });
   }, []);
+
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value.toLowerCase();
+    setInput(inputValue);
+  };
+
+  // Filter the TopAlbum based on input
+  const filteredAlbums = TopAlbum.filter((album) =>
+    album.title.toLowerCase().includes(input)
+  );
+
   return (
-    <div
-      style={{
-        position: "relavtive",
-      }}
-    >
+    <div style={{ position: "relative" }}>
       <form
-        style={{
-          display: "flex",
-          minWidth: "570px",
-        }}
+        onSubmit={(e) => e.preventDefault()} // Prevent form submission
+        style={{ display: "flex", minWidth: "570px" }}
       >
         <input
           placeholder="Search an album of your choice"
+          value={input}
+          onChange={handleInputChange}
           style={{
             flex: 1,
             borderRadius: "8px 0px 0px 8px",
@@ -33,6 +42,7 @@ export default () => {
           }}
         />
         <button
+          type="submit"
           style={{
             width: "66px",
             height: "48px",
@@ -46,7 +56,7 @@ export default () => {
           <SearchIcon />
         </button>
       </form>
-      <Menu data={TopAlbum} />
+      {input && <Menu data={filteredAlbums} />}
     </div>
   );
 };
