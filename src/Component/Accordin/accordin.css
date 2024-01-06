@@ -1,0 +1,29 @@
+.wrapper {
+  width: 1135px;
+  height: 345px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+.header {
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  color: var(--css-white);
+  padding: 6px;
+}
+
+.accordin-Q {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--css-white);
+}
+.accordin-A {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 16px;
+  font-weight: 501 !important;
+  color: var(--css-black);
+}

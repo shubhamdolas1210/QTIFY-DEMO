@@ -28,7 +28,7 @@ export default () => {
   return (
     <div style={{ position: "relative" }}>
       <form
-        onSubmit={(e) => e.preventDefault()} // Prevent form submission
+        onSubmit={(e) => e.preventDefault()}
         style={{ display: "flex", minWidth: "570px" }}
       >
         <input
