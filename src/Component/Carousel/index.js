@@ -11,20 +11,15 @@ export default ({ navId, data }) => {
     <div className="carousel-container">
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
-        // onSwiper={setSwiperRef}
         slidesPerView={8}
-        // centeredSlides={true}
         spaceBetween={170}
-        // pagination={{
-        //   type: "fraction",
-        // }}
         navigation={{
           nextEl: `.arrow-right-${navId}`,
           prevEl: `.arrow-left-${navId}`,
         }}
         virtual
       >
-        {data.map((cardData) => (
+        {data.map((cardData, index) => (
           <SwiperSlide className="swiperSlide" key={cardData.id}>
             <Card
               imgSrc={cardData.image}

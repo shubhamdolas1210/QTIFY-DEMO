@@ -31,6 +31,7 @@ function App() {
       setGenres([{ key: "all", label: "All" }, ...res.data.data]);
     });
   }, []);
+
   return (
     <div>
       <Navbar />

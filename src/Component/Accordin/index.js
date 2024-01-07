@@ -16,7 +16,7 @@ export default () => {
           border: "1px white",
           borderRadius: "10px",
           borderWidth: "thin",
-          marginBottom: "10px",
+          marginBottom: "15px",
         }}
       >
         <AccordionSummary
