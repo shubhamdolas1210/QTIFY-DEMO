@@ -66,6 +66,7 @@ export default ({ data }) => {
         top: "60px",
         backgroundColor: "black",
         borderRadius: "2px 8px 8px 8px",
+        zIndex: "10",
       }}
     >
       {data.map((cardData) => (

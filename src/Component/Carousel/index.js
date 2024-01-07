@@ -19,7 +19,7 @@ export default ({ navId, data }) => {
         }}
         virtual
       >
-        {data.map((cardData, index) => (
+        {data.map((cardData) => (
           <SwiperSlide className="swiperSlide" key={cardData.id}>
             <Card
               imgSrc={cardData.image}
